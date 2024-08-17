@@ -8,12 +8,11 @@ from dotenv import load_dotenv
 # 加载.env文件中的环境变量
 load_dotenv()
 
-year = os.getenv('YEAR')
-month = os.getenv('MONTH')
-day = os.getenv('DAY')
-hour = os.getenv('HOUR')
-min = os.getenv('MIN')
-
+year = int(os.getenv('YEAR'))
+month = int(os.getenv('MONTH'))
+day = int(os.getenv('DAY'))
+hour = int(os.getenv('HOUR'))
+minute = int(os.getenv('MIN'))
 
 # 运行你的 appointment.py 脚本
 def run_appointment_script():
