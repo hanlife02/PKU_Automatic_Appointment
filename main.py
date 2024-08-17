@@ -30,9 +30,18 @@ target_date = datetime(year, month, day, hour, min)  # 修改为你需要的日�
 # 创建一个线程来等待到指定时间并运行脚本
 def schedule_task():
     time_until_target = calculate_seconds_until(target_date)
-    if time_until_target > 0:
-        print(f"Waiting for {time_until_target} seconds until {target_date}")
-        time.sleep(time_until_target)
+    interval = 10  # 每十秒输出一次
+
+    while time_until_target > 0:
+        if time_until_target > interval:
+            print(f"Waiting for {time_until_target:.2f} seconds until {target_date}")
+            time.sleep(interval)
+            time_until_target -= interval
+        else:
+            print(f"Waiting for {time_until_target:.2f} seconds until {target_date}")
+            time.sleep(time_until_target)
+            time_until_target = 0
+
     run_appointment_script()
 
 # 启动线程
