@@ -1,5 +1,5 @@
-import schedule
 import time
+import threading
 import subprocess
 from datetime import datetime
 from dotenv import load_dotenv
@@ -27,11 +27,14 @@ def calculate_seconds_until(target_datetime):
 # 设置目标日期和时间 (年, 月, 日, 时, 分)
 target_date = datetime(year, month, day, hour, min)  # 修改为你需要的日期和时间
 
-# 等待直到目标时间
-time_until_target = calculate_seconds_until(target_date)
-if time_until_target > 0:
-    print(f"Waiting for {time_until_target} seconds until {target_date}")
-    time.sleep(time_until_target)
+# 创建一个线程来等待到指定时间并运行脚本
+def schedule_task():
+    time_until_target = calculate_seconds_until(target_date)
+    if time_until_target > 0:
+        print(f"Waiting for {time_until_target} seconds until {target_date}")
+        time.sleep(time_until_target)
+    run_appointment_script()
 
-# 在指定日期和时间运行脚本
-run_appointment_script()
+# 启动线程
+thread = threading.Thread(target=schedule_task)
+thread.start()
