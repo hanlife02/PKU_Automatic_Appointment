@@ -67,10 +67,11 @@ https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13L
 按照要求修改`.env`即可<br><br>
 
 ④ **运行 `main.py`**<br><br>
+任意时间运行均可，到0点会自动预约(需正确填写.env）<br><br>
 见到下图即运行成功<br><br>
 ![](https://hanlife02.com.cn/api/v2/objects/file/2dhy73n26f3nd2ct6k.png)
 <br><br>
-运行成功后，浏览器窗口将在5分钟后自动关闭，请及时截图保存信息。
+运行成功后，浏览器窗口将在5分钟后自动关闭，请及时截图保存信息。也可以重新进入截图保存。
 
 ## 免责声明
   1.本仓库严禁用于任何商业用途！<br><br>
