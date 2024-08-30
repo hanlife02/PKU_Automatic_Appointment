@@ -1,3 +1,12 @@
+'''
+Author        : Ethan
+Contact       : han@hanlife02.com.cn
+Date          : 2024-08-30 19:22:26
+LastEditTime  : 2024-08-30 19:22:58
+LastEditors   : Ethan
+Description   : This is a script for automatic appointments for Peking University students
+'''
+
 import os
 import time
 import threading
