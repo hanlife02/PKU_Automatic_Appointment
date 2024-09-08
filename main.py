@@ -74,7 +74,11 @@ def schedule_task():
             print(f"Waiting for {time_until_target:.2f} seconds until {target_date}")
             time.sleep(time_until_target)
             time_until_target = 0
-
+            
+    # 添加等待时间，让页面有时间刷新为第二天的内容
+    print("Waiting for page refresh...")
+    time.sleep(5)  # 等待5秒让页面刷新
+    
     # 第一次预约，关闭浏览器
     driver = webdriver.Edge(service=service)
     make_appointment(driver, date_first, door_first, time_first, name_first, id_number_first, phone_first, purpose_first, secret, close_driver=True)
